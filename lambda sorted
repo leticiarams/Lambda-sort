@@ -1,0 +1,13 @@
+from bson import ObjectId
+
+id = '4564646464dasdas46das6d4a56s'
+
+FIND = db.find({'id': ObjectId(id)},{'content': 1,'time_stamp':1})
+
+'''
+Não podemos iterar a lista mais de uma vez, portanto temos que criar uma copia do retorno da mesma.
+'''
+FIND_NEW = FIND.__copy__()
+if FIND.count() > 0:
+    LAST_VALUE = sorted(FIND, key=lambda k: k['time_stamp'], reverse=True)[0]
+    FRST_VALUE = sorted(FIND_NEW, key=lambda k: k['time_stamp'], reverse=True)[-1]
