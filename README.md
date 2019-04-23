@@ -1,2 +1,3 @@
 # Lambda-sort
-Como fazer sort com lambda
+Sort lambda, first and last values of stamp
+
